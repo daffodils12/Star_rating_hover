@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./bootstrap.min.css">
+<script src="./bootstrap.min.js"></script>
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+var clicked=0;
+function chkMarkStar(j) {
+	//alert("In chkMarkStar()");
+	//alert("j :" + "**"+j+"**");
+	var objnm="ra";
+    var x;
+    var y;
+    //alert("bef loop");
+    for (i=1; i<j; i++) {
+    	//alert("in loop");
+    	y=objnm+i;
+    	//alert("y :"+y);
+    	x = document.getElementById(y);
+    	x.style.color = "orange";
+    }
+}
+
+function rmvMarkStar(j) {
+	//alert("In rmvMarkStar()");
+	//alert("j :" + "**"+j+"**");
+	var objnm="ra";
+    var x;
+    var y;
+    //alert("clicked "+clicked);
+    if (clicked != 1 ) {
+		for (i=1; i<j; i++) {
+			//alert("in loop");
+			y=objnm+i;
+			//alert("y :"+y);
+			x = document.getElementById(y);
+			x.style.color = "black";
+		}
+	}
+}
+
+function clickStar(j) {
+	//alert("In clickStar()");
+	//alert("j :" + "**"+j+"**");
+	var objnm="ra";
+    var x;
+    var y;
+    //alert("bef loop");
+    for (i=1; i<j; i++) {
+    	//alert("in loop");
+    	y=objnm+i;
+    	//alert("y :"+y);
+    	x = document.getElementById(y);
+    	x.style.color = "orange";
+    	clicked=1;
+    }
+   // alert("clicked "+clicked);
+}
+</script>
+</head>
+<body>
+
+<h2>Star Rating</h2>
+<span id="ra1" onmouseover="chkMarkStar(2)" onmouseleave="rmvMarkStar(2)" onclick="clickStar(2)" class="fa fa-star"></span>
+<span id="ra2" onmouseover="chkMarkStar(3)" onmouseleave="rmvMarkStar(3)" onclick="clickStar(3)" class="fa fa-star"></span>
+<span id="ra3" onmouseover="chkMarkStar(4)" onmouseleave="rmvMarkStar(4)" onclick="clickStar(4)" class="fa fa-star"></span>
+<span id="ra4" onmouseover="chkMarkStar(5)" onmouseleave="rmvMarkStar(5)" onclick="clickStar(5)" class="fa fa-star"></span>
+<span id="ra5" onmouseover="chkMarkStar(6)" onmouseleave="rmvMarkStar(6)" onclick="clickStar(6)" class="fa fa-star"></span>
+
+
+
+
+</body>
+</html>
